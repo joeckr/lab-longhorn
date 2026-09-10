@@ -24,6 +24,6 @@ Once the Talos Linux prerequisites are met, you can install Longhorn using the p
 ```bash
 kubectl create namespace longhorn-system || true
 kubectl label namespace longhorn-system pod-security.kubernetes.io/enforce=privileged --overwrite
-helm dependency update ./charts/longhorn
-helm upgrade --install longhorn ./charts/longhorn --namespace longhorn-system
+helm dependency update ./chart
+helm upgrade --install longhorn ./chart --namespace longhorn-system
 ```

@@ -5,7 +5,7 @@ kubectl create namespace longhorn-system || true
 kubectl label namespace longhorn-system pod-security.kubernetes.io/enforce=privileged --overwrite
 
 # Build dependencies for the wrapper chart
-helm dependency update ./charts/longhorn
+helm dependency update ./chart
 
 # Install the wrapper chart
-helm upgrade --install longhorn ./charts/longhorn --namespace longhorn-system
+helm upgrade --install longhorn ./chart --namespace longhorn-system
