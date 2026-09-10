@@ -1,0 +1,7 @@
+# Default values for the longhorn-wrapper chart.
+# This overrides the values of the official Longhorn dependency chart.
+
+longhorn:
+  # Enable pod security policies compatible with Talos
+  defaultSettings:
+    defaultDataPath: "/var/lib/longhorn"
