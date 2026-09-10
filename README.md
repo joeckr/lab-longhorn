@@ -11,7 +11,7 @@ Please refer to the official [Talos Support Documentation for Longhorn](https://
 
 1. Install Longhorn
 
-Once the Talos Linux prerequisites are met, you can install Longhorn using the provided local Helm chart.
+Once the Talos Linux prerequisites are met, you can install Longhorn using the provided local wrapper Helm chart. This wrapper chart declares the official Longhorn chart as a dependency.
 
 **Option A: Run the installation script**
 
@@ -24,5 +24,6 @@ Once the Talos Linux prerequisites are met, you can install Longhorn using the p
 ```bash
 kubectl create namespace longhorn-system || true
 kubectl label namespace longhorn-system pod-security.kubernetes.io/enforce=privileged --overwrite
+helm dependency update ./charts/longhorn
 helm upgrade --install longhorn ./charts/longhorn --namespace longhorn-system
 ```
